@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ilab.uq.edu.au/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://ilab.uq.edu.au/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ilab.uq.edu.au/">
+      <s:element name="GetLabEquipmentStatus">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLabEquipmentStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLabEquipmentStatusResult" type="tns:LabEquipmentStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LabEquipmentStatus">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Online" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="identifier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="passKey" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetTimeUntilReady">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTimeUntilReadyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTimeUntilReadyResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Validate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlSpecification" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateResult" type="tns:Validation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Validation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Accepted" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExecutionTime" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="StartLabExecution">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlSpecification" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartLabExecutionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartLabExecutionResult" type="tns:ExecutionStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExecutionStatus">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ExecutionId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExecuteStatus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultStatus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeRemaining" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLabExecutionStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="executionId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLabExecutionStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLabExecutionStatusResult" type="tns:ExecutionStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLabExecutionResults">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="executionId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLabExecutionResultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLabExecutionResultsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelLabExecution">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="executionId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelLabExecutionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CancelLabExecutionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetLabEquipmentStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLabEquipmentStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetLabEquipmentStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLabEquipmentStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLabEquipmentStatusAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeUntilReadySoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeUntilReady" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeUntilReadySoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeUntilReadyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeUntilReadyAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSoapIn">
+    <wsdl:part name="parameters" element="tns:Validate" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="StartLabExecutionSoapIn">
+    <wsdl:part name="parameters" element="tns:StartLabExecution" />
+  </wsdl:message>
+  <wsdl:message name="StartLabExecutionSoapOut">
+    <wsdl:part name="parameters" element="tns:StartLabExecutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartLabExecutionAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetLabExecutionStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLabExecutionStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetLabExecutionStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLabExecutionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLabExecutionStatusAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetLabExecutionResultsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLabExecutionResults" />
+  </wsdl:message>
+  <wsdl:message name="GetLabExecutionResultsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLabExecutionResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLabExecutionResultsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CancelLabExecutionSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelLabExecution" />
+  </wsdl:message>
+  <wsdl:message name="CancelLabExecutionSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelLabExecutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelLabExecutionAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="LabEquipmentServiceSoap">
+    <wsdl:operation name="GetLabEquipmentStatus">
+      <wsdl:input message="tns:GetLabEquipmentStatusSoapIn" />
+      <wsdl:output message="tns:GetLabEquipmentStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeUntilReady">
+      <wsdl:input message="tns:GetTimeUntilReadySoapIn" />
+      <wsdl:output message="tns:GetTimeUntilReadySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Validate">
+      <wsdl:input message="tns:ValidateSoapIn" />
+      <wsdl:output message="tns:ValidateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartLabExecution">
+      <wsdl:input message="tns:StartLabExecutionSoapIn" />
+      <wsdl:output message="tns:StartLabExecutionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLabExecutionStatus">
+      <wsdl:input message="tns:GetLabExecutionStatusSoapIn" />
+      <wsdl:output message="tns:GetLabExecutionStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLabExecutionResults">
+      <wsdl:input message="tns:GetLabExecutionResultsSoapIn" />
+      <wsdl:output message="tns:GetLabExecutionResultsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelLabExecution">
+      <wsdl:input message="tns:CancelLabExecutionSoapIn" />
+      <wsdl:output message="tns:CancelLabExecutionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LabEquipmentServiceSoap" type="tns:LabEquipmentServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLabEquipmentStatus">
+      <soap:operation soapAction="http://ilab.uq.edu.au/GetLabEquipmentStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLabEquipmentStatusAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeUntilReady">
+      <soap:operation soapAction="http://ilab.uq.edu.au/GetTimeUntilReady" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTimeUntilReadyAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Validate">
+      <soap:operation soapAction="http://ilab.uq.edu.au/Validate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartLabExecution">
+      <soap:operation soapAction="http://ilab.uq.edu.au/StartLabExecution" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StartLabExecutionAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabExecutionStatus">
+      <soap:operation soapAction="http://ilab.uq.edu.au/GetLabExecutionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLabExecutionStatusAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabExecutionResults">
+      <soap:operation soapAction="http://ilab.uq.edu.au/GetLabExecutionResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLabExecutionResultsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelLabExecution">
+      <soap:operation soapAction="http://ilab.uq.edu.au/CancelLabExecution" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CancelLabExecutionAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LabEquipmentServiceSoap12" type="tns:LabEquipmentServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLabEquipmentStatus">
+      <soap12:operation soapAction="http://ilab.uq.edu.au/GetLabEquipmentStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLabEquipmentStatusAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeUntilReady">
+      <soap12:operation soapAction="http://ilab.uq.edu.au/GetTimeUntilReady" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTimeUntilReadyAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Validate">
+      <soap12:operation soapAction="http://ilab.uq.edu.au/Validate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidateAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartLabExecution">
+      <soap12:operation soapAction="http://ilab.uq.edu.au/StartLabExecution" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StartLabExecutionAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabExecutionStatus">
+      <soap12:operation soapAction="http://ilab.uq.edu.au/GetLabExecutionStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLabExecutionStatusAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabExecutionResults">
+      <soap12:operation soapAction="http://ilab.uq.edu.au/GetLabExecutionResults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLabExecutionResultsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelLabExecution">
+      <soap12:operation soapAction="http://ilab.uq.edu.au/CancelLabExecution" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CancelLabExecutionAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LabEquipmentService">
+    <wsdl:port name="LabEquipmentServiceSoap" binding="tns:LabEquipmentServiceSoap">
+      <soap:address location="http://localhost:8089/ILabEquipmentService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LabEquipmentServiceSoap12" binding="tns:LabEquipmentServiceSoap12">
+      <soap12:address location="http://localhost:8089/ILabEquipmentService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILabServer", "ILabServer\ILabServer.csproj", "{CED64EB6-C8B6-44CE-BEE9-35DEE978FF71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IServiceBroker", "IServiceBroker\IServiceBroker.csproj", "{8CE7682A-F945-4E48-ABB8-6D2DB8D5B6C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Proxies", "Proxies", "{181A994C-0D9B-4D4C-9237-6A1D1A1718B3}"
+	ProjectSection(SolutionItems) = preProject
+		MakeProxies.bat = MakeProxies.bat
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryLab", "..\LabLibraries\LibraryLab\LibraryLab.csproj", "{7266AE91-D308-40AC-947C-486745471E84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wsdl", "Wsdl", "{33BDCF36-BC8E-499E-A16A-ACB2917A4035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILabEquipment", "ILabEquipment\ILabEquipment.csproj", "{E728A270-D797-4966-AE74-1E729FFD0436}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CED64EB6-C8B6-44CE-BEE9-35DEE978FF71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED64EB6-C8B6-44CE-BEE9-35DEE978FF71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED64EB6-C8B6-44CE-BEE9-35DEE978FF71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED64EB6-C8B6-44CE-BEE9-35DEE978FF71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CE7682A-F945-4E48-ABB8-6D2DB8D5B6C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CE7682A-F945-4E48-ABB8-6D2DB8D5B6C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CE7682A-F945-4E48-ABB8-6D2DB8D5B6C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE7682A-F945-4E48-ABB8-6D2DB8D5B6C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7266AE91-D308-40AC-947C-486745471E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7266AE91-D308-40AC-947C-486745471E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7266AE91-D308-40AC-947C-486745471E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7266AE91-D308-40AC-947C-486745471E84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E728A270-D797-4966-AE74-1E729FFD0436}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E728A270-D797-4966-AE74-1E729FFD0436}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E728A270-D797-4966-AE74-1E729FFD0436}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E728A270-D797-4966-AE74-1E729FFD0436}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
