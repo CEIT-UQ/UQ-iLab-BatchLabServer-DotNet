@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<equipmentConfig title="Radioactivity" version="4.0">
+  <powerupDelay>0</powerupDelay>
+  <powerdownTimeout />
+
+  <devices>
+    <device name="DeviceFlexMotion">
+      <!-- Device type to use and can be any of: None, Simulation, Hardware -->
+      <type>Simulation</type>
+      <simulation />
+      <hardware>
+        <boardId>2</boardId>
+        <axisId>
+          <tube>1</tube>
+          <sources>2</sources>
+          <absorbers>3</absorbers>
+          <unused>4</unused>
+        </axisId>
+        <powerupResetDelay>39</powerupResetDelay>
+      </hardware>
+      <tube>
+        <offsetDistance>9</offsetDistance>
+        <homeDistance>20</homeDistance>
+        <moveRate>0.530</moveRate>
+        <initAxis>true</initAxis>
+      </tube>
+      <sources>
+        <firstLocation>A</firstLocation>
+        <homeLocation>F</homeLocation>
+        <source name="Unused-A">
+          <location>A</location>
+          <encoderPosition>72000</encoderPosition>
+          <selectTime>11.2</selectTime>
+          <returnTime>8.6</returnTime>
+        </source>
+        <source name="Unused-B">
+          <location>B</location>
+          <encoderPosition>82700</encoderPosition>
+          <selectTime>12.1</selectTime>
+          <returnTime>7.5</returnTime>
+        </source>
+        <source name="Strontium-90">
+          <location>C</location>
+          <encoderPosition>7700</encoderPosition>
+          <selectTime>5.8</selectTime>
+          <returnTime>13.8</returnTime>
+        </source>
+        <source name="Unused-D">
+          <location>D</location>
+          <encoderPosition>23750</encoderPosition>
+          <selectTime>7.4</selectTime>
+          <returnTime>12.6</returnTime>
+        </source>
+        <source name="Unused-E">
+          <location>E</location>
+          <encoderPosition>39800</encoderPosition>
+          <selectTime>8.6</selectTime>
+          <returnTime>11.2</returnTime>
+        </source>
+        <source name="None">
+          <location>F</location>
+          <encoderPosition>55900</encoderPosition>
+          <selectTime>9.9</selectTime>
+          <returnTime>9.9</returnTime>
+        </source>
+      </sources>
+      <absorbers>
+        <firstLocation>A</firstLocation>
+        <homeLocation>A</homeLocation>
+        <absorber name="None">
+          <location>A</location>
+          <encoderPosition>3200</encoderPosition>
+          <selectTime>9.4</selectTime>
+          <returnTime>9.4</returnTime>
+          <absorption>0</absorption>
+        </absorber>
+        <absorber name="Paper">
+          <location>B</location>
+          <encoderPosition>9300</encoderPosition>
+          <selectTime>10.3</selectTime>
+          <returnTime>8.9</returnTime>
+          <absorption>16</absorption>
+        </absorber>
+        <absorber name="Aluminium Sheet">
+          <location>C</location>
+          <encoderPosition>15400</encoderPosition>
+          <selectTime>11.0</selectTime>
+          <returnTime>8.4</returnTime>
+          <absorption>77</absorption>
+        </absorber>
+        <absorber name="Lead Sheet">
+          <location>D</location>
+          <encoderPosition>21500</encoderPosition>
+          <selectTime>11.5</selectTime>
+          <returnTime>7.9</returnTime>
+          <absorption>99</absorption>
+        </absorber>
+        <absorber name="Alum.Foil x1">
+          <location>E</location>
+          <encoderPosition>27600</encoderPosition>
+          <selectTime>12.0</selectTime>
+          <returnTime>7.5</returnTime>
+          <absorption>1</absorption>
+        </absorber>
+        <absorber name="Alum.Foil x2">
+          <location>F</location>
+          <encoderPosition>33700</encoderPosition>
+          <selectTime>12.5</selectTime>
+          <returnTime>7.0</returnTime>
+          <absorption>2</absorption>
+        </absorber>
+        <absorber name="Alum.Foil x4">
+          <location>G</location>
+          <encoderPosition>39900</encoderPosition>
+          <selectTime>13.0</selectTime>
+          <returnTime>6.5</returnTime>
+          <absorption>3</absorption>
+        </absorber>
+        <absorber name="Alum.Foil x8">
+          <location>H</location>
+          <encoderPosition>46100</encoderPosition>
+          <selectTime>13.4</selectTime>
+          <returnTime>6.0</returnTime>
+          <absorption>6</absorption>
+        </absorber>
+        <absorber name="Alum.Foil x16">
+          <location>I</location>
+          <encoderPosition>52200</encoderPosition>
+          <selectTime>13.9</selectTime>
+          <returnTime>5.5</returnTime>
+          <absorption>12</absorption>
+        </absorber>
+        <absorber name="Alum.Foil x32">
+          <location>J</location>
+          <encoderPosition>58300</encoderPosition>
+          <selectTime>14.4</selectTime>
+          <returnTime>5.0</returnTime>
+          <absorption>25</absorption>
+        </absorber>
+        <absorber name="Alum.Foil x64">
+          <location>K</location>
+          <encoderPosition>64400</encoderPosition>
+          <selectTime>14.9</selectTime>
+          <returnTime>4.5</returnTime>
+          <absorption>50</absorption>
+        </absorber>
+        <absorber name="Alum.Foil x???">
+          <location>L</location>
+          <encoderPosition>70500</encoderPosition>
+          <selectTime>15.4</selectTime>
+          <returnTime>4.0</returnTime>
+          <absorption>33</absorption>
+        </absorber>
+        <absorber name="Aluminium Disc">
+          <location>M</location>
+          <encoderPosition>76600</encoderPosition>
+          <selectTime>15.9</selectTime>
+          <returnTime>3.5</returnTime>
+          <absorption>90</absorption>
+        </absorber>
+        <absorber name="Lead Disc">
+          <location>N</location>
+          <encoderPosition>83000</encoderPosition>
+          <selectTime>16.4</selectTime>
+          <returnTime>2.7</returnTime>
+          <absorption>99</absorption>
+        </absorber>
+      </absorbers>
+      <initialise>
+        <enabled>false</enabled>
+        <delay>0</delay>
+      </initialise>
+    </device>
+
+    <device name="DeviceST360Counter">
+      <!-- Device type to use and can be any of: None, Simulation, Serial, Network -->
+      <type>Simulation</type>
+      <simulation>
+        <distance>15</distance>
+        <duration>10</duration>
+        <mean>1023</mean>
+        <power>1.8</power>
+        <deviation>29</deviation>
+      </simulation>
+      <serial>
+        <port>COM2</port>
+        <baud>9600</baud>
+      </serial>
+      <network>
+        <ipaddr>10.0.3.2</ipaddr>
+        <port>10001</port>
+      </network>
+      <geigerTubeVoltage>400</geigerTubeVoltage>
+      <speakerVolume>2</speakerVolume>
+      <timeAdjustment>
+        <capture>1.0625,0.175</capture>
+      </timeAdjustment>
+      <initialise>
+        <enabled>false</enabled>
+        <delay>0</delay>
+      </initialise>
+    </device>
+
+    <device name="DeviceSerialLcd">
+      <!-- Device type to use and can be any of: None, Simulation, Serial, Network -->
+      <type>None</type>
+      <network>
+        <ipaddr>10.0.3.2</ipaddr>
+        <port>10002</port>
+      </network>
+      <serial>
+        <port>COM1</port>
+        <baud>19200</baud>
+      </serial>
+      <writeLineTime>0.22</writeLineTime>
+      <initialise>
+        <enabled>false</enabled>
+        <delay>0</delay>
+      </initialise>
+    </device>
+  </devices>
+
+  <drivers>
+    <driver name="DriverRadioactivity">
+      <executionTimes>
+        <initialise>0</initialise>
+        <start>0</start>
+        <run>0</run>
+        <stop>0</stop>
+        <finalise>0</finalise>
+      </executionTimes>
+      <experimentResults>
+        <sourceName />
+        <absorberName />
+        <distance />
+        <duration />
+        <repeat />
+        <dataType>Real</dataType>
+        <dataVector distance="" />
+      </experimentResults>
+    </driver>
+    <driver name="DriverAbsorbers">
+      <executionTimes>
+        <initialise>0</initialise>
+        <start>0</start>
+        <run>0</run>
+        <stop>0</stop>
+        <finalise>0</finalise>
+      </executionTimes>
+      <experimentResults>
+        <sourceName />
+        <absorberName />
+        <distance />
+        <duration />
+        <repeat />
+        <dataType>Real</dataType>
+        <dataVector absorberName="" />
+      </experimentResults>
+    </driver>
+    <driver name="DriverSimActivity">
+      <executionTimes>
+        <initialise>0</initialise>
+        <start>0</start>
+        <run>0</run>
+        <stop>0</stop>
+        <finalise>0</finalise>
+      </executionTimes>
+      <experimentResults>
+        <sourceName />
+        <absorberName />
+        <distance />
+        <duration />
+        <repeat />
+        <dataType>Simulated</dataType>
+        <dataVector distance="" />
+      </experimentResults>
+    </driver>
+    <driver name="DriverSimAbsorbers">
+      <executionTimes>
+        <initialise>0</initialise>
+        <start>0</start>
+        <run>0</run>
+        <stop>0</stop>
+        <finalise>0</finalise>
+      </executionTimes>
+      <experimentResults>
+        <sourceName />
+        <absorberName />
+        <distance />
+        <duration />
+        <repeat />
+        <dataType>Simulated</dataType>
+        <dataVector absorberName="" />
+      </experimentResults>
+    </driver>
+    <driver name="DriverSimActivityNoDelay">
+      <executionTimes>
+        <initialise>0</initialise>
+        <start>0</start>
+        <run>0</run>
+        <stop>0</stop>
+        <finalise>0</finalise>
+      </executionTimes>
+      <experimentResults>
+        <sourceName />
+        <absorberName />
+        <distance />
+        <duration />
+        <repeat />
+        <dataType>Calculated</dataType>
+        <dataVector distance="" />
+      </experimentResults>
+    </driver>
+    <driver name="DriverSimAbsorbersNoDelay">
+      <executionTimes>
+        <initialise>0</initialise>
+        <start>0</start>
+        <run>0</run>
+        <stop>0</stop>
+        <finalise>0</finalise>
+      </executionTimes>
+      <experimentResults>
+        <sourceName />
+        <absorberName />
+        <distance />
+        <duration />
+        <repeat />
+        <dataType>Calculated</dataType>
+        <dataVector absorberName="" />
+      </experimentResults>
+    </driver>
+  </drivers>
+
+  <validation>
+    <distance>
+      <minimum>14</minimum>
+      <maximum>95</maximum>
+    </distance>
+    <duration>
+      <minimum>1</minimum>
+      <maximum>10</maximum>
+    </duration>
+    <repeat>
+      <minimum>1</minimum>
+      <maximum>10</maximum>
+    </repeat>
+    <totaltime>
+      <minimum>1</minimum>
+      <maximum>1200</maximum>
+    </totaltime>
+  </validation>
+
+  <setups>
+    <setup id="RadioactivityVsTime">
+      <driver>DriverRadioactivity</driver>
+    </setup>
+    <setup id="RadioactivityVsDistance">
+      <driver>DriverRadioactivity</driver>
+    </setup>
+    <setup id="RadioactivityVsAbsorber">
+      <driver>DriverAbsorbers</driver>
+    </setup>
+    <setup id="SimActivityVsTime">
+      <driver>DriverSimActivity</driver>
+    </setup>
+    <setup id="SimActivityVsDistance">
+      <driver>DriverSimActivity</driver>
+    </setup>
+    <setup id="SimActivityVsAbsorber">
+      <driver>DriverSimAbsorbers</driver>
+    </setup>
+    <setup id="SimActivityVsTimeNoDelay">
+      <driver>DriverSimActivityNoDelay</driver>
+    </setup>
+    <setup id="SimActivityVsDistanceNoDelay">
+      <driver>DriverSimActivityNoDelay</driver>
+    </setup>
+    <setup id="SimActivityVsAbsorberNoDelay">
+      <driver>DriverSimAbsorbersNoDelay</driver>
+    </setup>
+  </setups>
+</equipmentConfig>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<equipmentConfig title="Radioactivity" version="4.0">
+  <powerupDelay>0</powerupDelay>
+  <powerdownTimeout />
+
+  <devices>
+    <device name="DeviceFlexMotion">
+      <!-- Device type to use and can be any of: None, Simulation, Hardware -->
+      <type>Simulation</type>
+      <simulation />
+      <hardware>
+        <boardId>1</boardId>
+        <axisId>
+          <tube>1</tube>
+          <sources>2</sources>
+        </axisId>
+        <powerupResetDelay>27</powerupResetDelay>
+      </hardware>
+      <tube>
+        <offsetDistance>14</offsetDistance>
+        <homeDistance>25</homeDistance>
+        <moveRate>0.530</moveRate>
+        <initAxis>true</initAxis>
+      </tube>
+      <sources>
+        <firstLocation>A</firstLocation>
+        <homeLocation>F</homeLocation>
+        <source name="Strontium-90">
+          <location>A</location>
+          <encoderPosition>75200</encoderPosition>
+          <selectTime>13.3</selectTime>
+          <returnTime>9.5</returnTime>
+        </source>
+        <source name="Unused-B">
+          <location>B</location>
+          <encoderPosition>100</encoderPosition>
+          <selectTime>4.1</selectTime>
+          <returnTime>18.5</returnTime>
+        </source>
+        <source name="Unused-C">
+          <location>C</location>
+          <encoderPosition>10900</encoderPosition>
+          <selectTime>5.6</selectTime>
+          <returnTime>17.2</returnTime>
+        </source>
+        <source name="Unused-D">
+          <location>D</location>
+          <encoderPosition>32450</encoderPosition>
+          <selectTime>8.2</selectTime>
+          <returnTime>14.6</returnTime>
+        </source>
+        <source name="Unused-E">
+          <location>E</location>
+          <encoderPosition>43100</encoderPosition>
+          <selectTime>9.5</selectTime>
+          <returnTime>13.3</returnTime>
+        </source>
+        <source name="None">
+          <location>F</location>
+          <encoderPosition>59150</encoderPosition>
+          <selectTime>11.5</selectTime>
+          <returnTime>11.4</returnTime>
+        </source>
+      </sources>
+      <initialise>
+        <enabled>false</enabled>
+        <delay>0</delay>
+      </initialise>
+    </device>
+
+    <device name="DeviceST360Counter">
+      <!-- Device type to use and can be any of: None, Simulation, Serial, Network -->
+      <type>Simulation</type>
+      <simulation>
+        <distance>15</distance>
+        <duration>10</duration>
+        <mean>1023</mean>
+        <power>1.8</power>
+        <deviation>29</deviation>
+      </simulation>
+      <serial>
+        <port>COM4</port>
+        <baud>9600</baud>
+      </serial>
+      <network>
+        <ipaddr>10.0.3.3</ipaddr>
+        <port>10001</port>
+      </network>
+      <geigerTubeVoltage>400</geigerTubeVoltage>
+      <speakerVolume>2</speakerVolume>
+      <timeAdjustment>
+        <capture>1.0625,0.175</capture>
+      </timeAdjustment>
+      <initialise>
+        <enabled>true</enabled>
+        <delay>0</delay>
+      </initialise>
+    </device>
+
+    <device name="DevicePhysicsCounter">
+      <timeAdjustment>
+        <capture>1.95,0.0</capture>
+      </timeAdjustment>
+      <initialiseDelay>0</initialiseDelay>
+    </device>
+
+    <device name="DeviceSerialLcd">
+      <!-- Device type to use and can be any of: None, Simulation, Serial, Network -->
+      <type>None</type>
+      <network>
+        <ipaddr>10.0.3.3</ipaddr>
+        <port>10002</port>
+      </network>
+      <serial>
+        <port>COM1</port>
+        <baud>19200</baud>
+      </serial>
+      <writeLineTime>0.22</writeLineTime>
+      <initialise>
+        <enabled>false</enabled>
+        <delay>0</delay>
+      </initialise>
+    </device>
+  </devices>
+
+  <drivers>
+    <driver name="DriverRadioactivity">
+      <executionTimes>
+        <initialise>0</initialise>
+        <start>0</start>
+        <run>0</run>
+        <stop>0</stop>
+        <finalise>0</finalise>
+      </executionTimes>
+      <experimentResults>
+        <sourceName />
+        <absorberName />
+        <distance />
+        <duration />
+        <repeat />
+        <dataType>Real</dataType>
+        <dataVector distance="" />
+      </experimentResults>
+    </driver>
+    <driver name="DriverSimActivity">
+      <executionTimes>
+        <initialise>0</initialise>
+        <start>0</start>
+        <run>0</run>
+        <stop>0</stop>
+        <finalise>0</finalise>
+      </executionTimes>
+      <experimentResults>
+        <sourceName />
+        <absorberName />
+        <distance />
+        <duration />
+        <repeat />
+        <dataType>Simulated</dataType>
+        <dataVector distance="" />
+      </experimentResults>
+    </driver>
+    <driver name="DriverSimActivityNoDelay">
+      <executionTimes>
+        <initialise>0</initialise>
+        <start>0</start>
+        <run>0</run>
+        <stop>0</stop>
+        <finalise>0</finalise>
+      </executionTimes>
+      <experimentResults>
+        <sourceName />
+        <absorberName />
+        <distance />
+        <duration />
+        <repeat />
+        <dataType>Calculated</dataType>
+        <dataVector distance="" />
+      </experimentResults>
+    </driver>
+  </drivers>
+
+  <validation>
+    <distance>
+      <minimum>14</minimum>
+      <maximum>95</maximum>
+    </distance>
+    <duration>
+      <minimum>1</minimum>
+      <maximum>10</maximum>
+    </duration>
+    <repeat>
+      <minimum>1</minimum>
+      <maximum>10</maximum>
+    </repeat>
+    <totaltime>
+      <minimum>1</minimum>
+      <maximum>900</maximum>
+    </totaltime>
+  </validation>
+
+  <setups>
+    <setup id="RadioactivityVsTime">
+      <driver>DriverRadioactivity</driver>
+    </setup>
+    <setup id="RadioactivityVsDistance">
+      <driver>DriverRadioactivity</driver>
+    </setup>
+    <setup id="SimActivityVsTime">
+      <driver>DriverSimActivity</driver>
+    </setup>
+    <setup id="SimActivityVsDistance">
+      <driver>DriverSimActivity</driver>
+    </setup>
+    <setup id="SimActivityVsTimeNoDelay">
+      <driver>DriverSimActivityNoDelay</driver>
+    </setup>
+    <setup id="SimActivityVsDistanceNoDelay">
+      <driver>DriverSimActivityNoDelay</driver>
+    </setup>
+  </setups>
+</equipmentConfig>
