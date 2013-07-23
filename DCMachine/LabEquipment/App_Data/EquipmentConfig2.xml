@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<equipmentConfig title="DCMachine" version="4.0">
+  <powerupDelay>3</powerupDelay>
+  <!--<powerdownTimeout>15</powerdownTimeout>-->
+
+  <devices>
+    <device name="DeviceRedLion">
+      <network>
+        <ipaddr>10.0.3.203</ipaddr>
+        <port>502</port>
+        <timeouts>
+          <receive>3000</receive>
+        </timeouts>
+      </network>
+      <modbus>
+        <slaveId>1</slaveId>
+      </modbus>
+      <initialise>
+        <enabled>true</enabled>
+        <delay>26</delay>
+      </initialise>
+      <statusCheck>
+        <speed>true</speed>
+      </statusCheck>
+    </device>
+  </devices>
+
+  <drivers>
+    <driver name="DriverSpeedVsField">
+      <measurements>3</measurements>
+      <measurementDelay>3</measurementDelay>
+      <executionTimes>
+        <initialise>23</initialise>
+        <start>23</start>
+        <run>0</run>
+        <stop>27</stop>
+        <finalise>1</finalise>
+      </executionTimes>
+      <experimentResults>
+        <fieldMin />
+        <fieldMax />
+        <fieldStep />
+        <speedVector name="Motor Speed" units="" format="f0"/>
+        <fieldVector name="Field Current" units="" format="f02"/>
+        <voltageVector name="Armature Voltage" units="" format="f0"/>
+        <loadVector name="Load Torque" units="" format="f01"/>
+      </experimentResults>
+    </driver>
+
+    <driver name="DriverSpeedVsVoltage">
+      <measurements>3</measurements>
+      <measurementDelay>3</measurementDelay>
+      <executionTimes>
+        <initialise>24</initialise>
+        <start>15</start>
+        <run>0</run>
+        <stop>22</stop>
+        <finalise>1</finalise>
+      </executionTimes>
+      <experimentResults>
+        <speedMin />
+        <speedMax />
+        <speedStep />
+        <speedVector name="Motor Speed" units="" format="f0"/>
+        <fieldVector name="Field Current" units="" format="f02"/>
+        <voltageVector name="Armature Voltage" units="" format="f0"/>
+        <loadVector name="Load Torque" units="" format="f01"/>
+      </experimentResults>
+    </driver>
+
+    <driver name="DriverVoltageVsField">
+      <measurements>3</measurements>
+      <measurementDelay>3</measurementDelay>
+      <executionTimes>
+        <initialise>24</initialise>
+        <start>15</start>
+        <run>0</run>
+        <stop>25</stop>
+        <finalise>1</finalise>
+      </executionTimes>
+      <experimentResults>
+        <fieldMin />
+        <fieldMax />
+        <fieldStep />
+        <speedVector name="Motor Speed" units="" format="f0"/>
+        <fieldVector name="Field Current" units="" format="f02"/>
+        <voltageVector name="Armature Voltage" units="" format="f0"/>
+        <loadVector name="Load Torque" units="" format="f01"/>
+      </experimentResults>
+    </driver>
+
+    <driver name="DriverVoltageVsLoad">
+      <measurements>3</measurements>
+      <measurementDelay>3</measurementDelay>
+      <executionTimes>
+        <initialise>24</initialise>
+        <start>15</start>
+        <run>0</run>
+        <stop>25</stop>
+        <finalise>1</finalise>
+      </executionTimes>
+      <experimentResults>
+        <loadMin />
+        <loadMax />
+        <loadStep />
+        <speedVector name="Motor Speed" units="" format="f0"/>
+        <fieldVector name="Field Current" units="" format="f02"/>
+        <voltageVector name="Armature Voltage" units="" format="f0"/>
+        <loadVector name="Load Torque" units="" format="f01"/>
+      </experimentResults>
+    </driver>
+
+    <driver name="DriverVoltageVsSpeed">
+      <measurements>3</measurements>
+      <measurementDelay>3</measurementDelay>
+      <executionTimes>
+        <initialise>24</initialise>
+        <start>10</start>
+        <run>0</run>
+        <stop>20</stop>
+        <finalise>1</finalise>
+      </executionTimes>
+      <experimentResults>
+        <speedMin />
+        <speedMax />
+        <speedStep />
+        <speedVector name="Motor Speed" units="" format="f0"/>
+        <fieldVector name="Field Current" units="" format="f02"/>
+        <voltageVector name="Armature Voltage" units="" format="f0"/>
+        <loadVector name="Load Torque" units="" format="f01"/>
+      </experimentResults>
+    </driver>
+  </drivers>
+
+  <validation>
+    <speed>
+      <minimum>-1500</minimum>
+      <maximum>1500</maximum>
+      <step>
+        <minimum>100</minimum>
+        <maximum>1000</maximum>
+      </step>
+    </speed>
+    <field>
+      <minimum>50</minimum>
+      <maximum>100</maximum>
+      <step>
+        <minimum>5</minimum>
+        <maximum>50</maximum>
+      </step>
+    </field>
+    <load>
+      <minimum>0</minimum>
+      <maximum>80</maximum>
+      <step>
+        <minimum>5</minimum>
+        <maximum>50</maximum>
+      </step>
+    </load>
+  </validation>
+
+  <setups>
+    <setup id="SpeedVsField">
+      <driver>DriverSpeedVsField</driver>
+    </setup>
+    <setup id="SpeedVsVoltage">
+      <driver>DriverSpeedVsVoltage</driver>
+    </setup>
+    <setup id="VoltageVsField">
+      <driver>DriverVoltageVsField</driver>
+    </setup>
+    <setup id="VoltageVsLoad">
+      <driver>DriverVoltageVsLoad</driver>
+    </setup>
+    <setup id="VoltageVsSpeed">
+      <driver>DriverVoltageVsSpeed</driver>
+    </setup>
+  </setups>
+</equipmentConfig>
