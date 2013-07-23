@@ -1,0 +1,67 @@
+﻿<?xml version="1.0"?>
+<configuration>
+
+  <appSettings>
+
+    <!-- ServiceBrokerGuid: ServiceBroker's Globally Unique Identifer maximum 40 characters -->
+    <add key="ServiceBrokerGuid" value="13B164323CDE4AAAA7E2884F0B2F6110" />
+
+    <!-- Path for log files, filename format is the current date of the form YYYYMMDD.log -->
+    <add key="LogFilesPath" value="LogFiles" />
+
+    <!-- Logging level to use and can be any of: All, Finest, Finer, Fine, Info, Config, Warning, Severe, Off -->
+    <add key="LogLevel" value="Info" />
+
+    <!-- Database connection string -->
+    <add key="SqlConnection" value="data source=.\SQLEXPRESS;initial catalog=Dummy_ServiceBroker;Integrated Security=SSPI" />
+
+    <!-- Authenticating: If true, deny access if the LabClient's coupon Id and coupon passkey are not valid -->
+    <add key="Authenticating" value="true" />
+    <!-- LogAuthentication: If true, log the LabClient's coupon Id and coupon passkey -->
+    <add key="LogAuthentication" value="false" />
+
+    <!-- CouponId: Coupon Id to receive from the LabClient (development use only) -->
+    <add key="CouponId" value="12345" />
+    <!-- CouponPasskey: Coupon passkey to receive from the LabClient (development use only) -->
+    <add key="CouponPasskey" value="qwerty" />
+
+    <!-- LabServer?: Starting at zero, comma-seperated LabServer's guid, LabServer's web serviceURL, LabServer's passkey and ServiceBroker's incoming passkey (not used) -->
+    <add key="LabServer0" value="8C0BA543419E4d4ab340d449acd3e057, http://localhost:8083/LabServerWebService.asmx, fd3cf16cc855484fb06801379f475837, Ls2sbPasskey" />
+
+  </appSettings>
+
+  <connectionStrings/>
+
+  <system.web>
+    <!-- 
+            Set compilation debug="true" to insert debugging 
+            symbols into the compiled page. Because this 
+            affects performance, set this value to true only 
+            during development.
+        -->
+    <compilation debug="false">
+
+    </compilation>
+    <!--
+            The <authentication> section enables configuration 
+            of the security authentication mode used by 
+            ASP.NET to identify an incoming user. 
+        -->
+    <authentication mode="Windows" />
+    <!--
+            The <customErrors> section enables configuration 
+            of what to do if/when an unhandled error occurs 
+            during the execution of a request. Specifically, 
+            it enables developers to configure html error pages 
+            to be displayed in place of a error stack trace.
+
+        <customErrors mode="RemoteOnly" defaultRedirect="GenericErrorPage.htm">
+            <error statusCode="403" redirect="NoAccess.htm" />
+            <error statusCode="404" redirect="FileNotFound.htm" />
+        </customErrors>
+        -->
+
+
+  </system.web>
+
+</configuration>
