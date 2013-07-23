@@ -1,0 +1,144 @@
+#template td.navigation
+{
+    background-color: #E7ECEF;
+    vertical-align: top;
+    height: 100%;
+}
+#template td.pagecontent
+{
+    margin: 0px;
+    padding: 5px;
+    vertical-align: top;
+    width: 100%;
+}
+
+#banner td
+{
+    background-color: #003099; /* dark blue */
+    /* background-color: #500098; dark purple */
+}
+#banner td.title
+{
+    color: white;
+    font-size: 200%;
+    text-align: center;
+    width: 100%;
+}
+
+#statusbar td
+{
+    background-color: silver;
+    background-image: url("../img/gradient.gif"); /* path is relative to where the CSS is located */
+    height: 21px;
+}
+#statusbar td.version
+{
+    color: gray;
+    white-space: nowrap;
+    text-align: right;
+    vertical-align: middle;
+    padding-right: 10px;
+    width: 100%;
+}
+
+#navmenu td.header
+{
+    background-color: #A1BD41; /* Green */
+    /* background-color: #8141BD; Purple */
+    color: #FFF;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #8A8B8B;
+}
+#navmenu ul
+{
+    list-style-type: none;
+    margin: 3px;
+    padding: 0px;
+}
+#navmenu li
+{
+    display: block;
+    border: 1px solid #DFDFDF;
+    margin: 1px;
+}
+#navmenu a:link, #navmenu a:visited
+{
+    display: block;
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 4px;
+    text-decoration: none;
+}
+#navmenu a:hover, #navmenu a:active
+{
+    background-color: #EEF8E4; /* Light green */
+    /* background-color: #EEE4F8; Light purple */
+}
+
+#content td.title
+{
+    font-size: 160%;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    vertical-align: top;
+    padding: 2px;
+    width: 100%;
+}
+#content td.filler
+{
+    width: 100%;
+}
+
+#setup td.description
+{
+    text-align: left;
+    vertical-align: middle;
+    padding: 5px 5px 5px 0px;
+}
+
+#feedback
+{
+    font-size: 80%;
+}
+#feedback td
+{
+    background-color: silver;
+    background-image: url("../img/feedback-gradient.gif"); /* path is relative to where the CSS is located */
+    padding: 0px 10px 0px 10px;
+    border-top: solid 1px Silver;
+    text-align: right;
+    vertical-align: middle;
+    height: 19px;
+    width: 100%;
+}
+#feedback td.timezone
+{
+    text-align: left;
+    color: Gray;
+    width: 100%;
+}
+#feedback a
+{
+    color: Gray;
+}
+
+#footer td
+{
+    padding-bottom: 2px;
+    border-bottom: solid 1px Silver;
+}
+#footer td.left
+{
+    text-align: left;
+}
+#footer td.filler
+{
+    width: 100%;
+}
+#footer td.right
+{
+    text-align: right;
+}

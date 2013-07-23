@@ -1,0 +1,152 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LabClient.master.cs"
+    Inherits="LabClientHtml.LabClientMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>LabClient Master Page</title>
+    <link href="./resources/css/default.css" rel="stylesheet" type="text/css" />
+    <link href="./resources/css/template.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <table id="template" cellpadding="0" width="100%">
+        <tr>
+            <td colspan="2">
+                <table id="banner" cellpadding="0">
+                    <tr>
+                        <td class="logo">
+                            <a href="http://www.uq.edu.au/" target="_blank">
+                                <img src="./resources/img/uq-logo.gif" width="200" height="72" alt="uq-logo" />
+                            </a>
+                        </td>
+                        <td class="title">
+                            <asp:Label ID="lblTitle" runat="server"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table id="statusbar" cellpadding="0">
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td class="version">
+                            Version
+                            <asp:Label ID="lblVersion" runat="server"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="navigation">
+                <table id="navmenu" cellpadding="0">
+                    <tr>
+                        <td>
+                            <asp:Image ID="imgNavmenuPhoto" runat="server" Width="200" AlternateText="&nbsp;Image&nbsp;not&nbsp;available!&nbsp;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="header">
+                            ON THIS SITE
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <ul>
+                                    <li id="Li1" runat="server"><a id="A1" href="~/LabClient.aspx" runat="server">&#187;&nbsp;Home</a></li>
+                                    <li id="Li2" runat="server"><a id="A2" href="~/Setup.aspx" runat="server">&#187;&nbsp;Setup</a></li>
+                                    <li id="Li3" runat="server"><a id="A3" href="~/Status.aspx" runat="server">&#187;&nbsp;Status</a></li>
+                                    <li id="Li4" runat="server"><a id="A4" href="~/Results.aspx" runat="server">&#187;&nbsp;Results</a></li>
+                                    <li id="liCamera" runat="server"><a id="aCamera" href="" target="_blank" runat="server">
+                                        &#187;&nbsp;Camera</a></li>
+                                </ul>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+            </td>
+            <td class="pagecontent">
+                <table id="content" cellpadding="0">
+                    <tr>
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="./resources/img/level2-arrow.gif" width="28" height="28" alt="level2-arrow" />
+                                    </td>
+                                    <td class="title">
+                                        <asp:ContentPlaceHolder ID="ContentTitle" runat="server">
+                                            Content Title
+                                        </asp:ContentPlaceHolder>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="./resources/img/level2-underline.gif" width="395" height="1" alt="level2-underline" />
+                        </td>
+                        <td class="filler">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <asp:ContentPlaceHolder ID="ContentPage" runat="server">
+                                Content of webpage
+                            </asp:ContentPlaceHolder>
+                            <p>
+                                &nbsp;
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table id="feedback" cellpadding="0">
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            <asp:HyperLink ID="urlFeedbackEmail" runat="server" Text="Feedback"></asp:HyperLink>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table id="footer" cellpadding="0">
+                    <tr>
+                        <td class="left">
+                            <a href="http://www.ceit.uq.edu.au/" target="_blank">
+                                <img src="./resources/img/ceit_logo.gif" width="176" height="64" alt="ceit-logo" />
+                            </a>
+                        </td>
+                        <td class="filler">
+                            &nbsp;
+                        </td>
+                        <td class="right">
+                            <a href="http://www.mit.edu/" target="_blank">
+                                <img src="./resources/img/mit-blackred-footer1.gif" width="334" height="36" alt="mit-logo" />
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+
+<configuration>
+
+  <configSections>
+  </configSections>
+  
+  <appSettings>
+
+    <!-- Path for log files, filename format is the current date of the form YYYYMMDD.log -->
+    <add key="LogFilesPath" value="LogFiles" />
+
+    <!-- Logging level to use and can be any of: All, Finest, Finer, Fine, Info, Config, Warning, Severe, Off -->
+    <add key="LogLevel" value="Info" />
+
+    <!-- ServiceUrl: ServiceBroker's web service URL -->
+    <add key="ServiceUrl" value=""/>
+
+    <!-- LabServerId: LabServer's Globally Unique Identifer maximum 40 characters -->
+    <add key="LabServerId" value="" />
+
+    <!-- MultiSubmit: If true, allows the client to submit further experiments before previously submitted experiments have completed -->
+    <add key="MultiSubmit" value="false" />
+
+    <!-- FeedbackEmail: Email address of administrator for feedback link on webpage, can be empty -->
+    <add key="FeedbackEmail" value="" />
+
+    <!--
+
+    NOTE: The LabClient can be launched with URL request parameters for LabServerId, ServiceUrl and MultiSubmit. This
+    allows the one deployment of the LabClient web application to be used with multiple ServiceBrokers and LabServers.
+
+    An example URL that uses the Microsoft Visual Studio development .NET C# code is:
+
+    /LabClient.do?ServiceUrl=http://localhost:8081/ServiceBrokerService.asmx&LabServerId=8C0BA543419E4d4ab340d449acd3e057&MultiSubmit=true
+
+    Also Note: During development in the Visual Studio IDE, the 'Specific Page' entry on the Properties page of the LabClient web application
+    must specify the following request parameters to communicate with the Dummy ServiceBroker:
+
+    LabClient.aspx?CouponId=12345&Passkey=qwerty
+
+    -->
+
+  </appSettings>
+
+  <connectionStrings/>
+
+  <system.web>
+    <!-- 
+            Set compilation debug="true" to insert debugging 
+            symbols into the compiled page. Because this 
+            affects performance, set this value to true only 
+            during development.
+        -->
+    <compilation debug="false" />
+    <!--
+            The <authentication> section enables configuration 
+            of the security authentication mode used by 
+            ASP.NET to identify an incoming user. 
+        -->
+    <authentication mode="Windows" />
+    <!--
+            The <customErrors> section enables configuration 
+            of what to do if/when an unhandled error occurs 
+            during the execution of a request. Specifically, 
+            it enables developers to configure html error pages 
+            to be displayed in place of a error stack trace.
+
+        <customErrors mode="RemoteOnly" defaultRedirect="GenericErrorPage.htm">
+            <error statusCode="403" redirect="NoAccess.htm" />
+            <error statusCode="404" redirect="FileNotFound.htm" />
+        </customErrors>
+        -->
+  </system.web>
+</configuration>

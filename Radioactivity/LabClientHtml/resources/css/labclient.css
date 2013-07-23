@@ -1,0 +1,73 @@
+/*
+ * Response messages
+*/
+.infomessage, .warningmessage, .errormessage
+{
+    color: Black;
+    border: solid 1px Black;
+    padding: 10px;
+}
+.infomessage
+{
+    background-color: #e8ffe8;
+}
+.warningmessage
+{
+    background-color: #e8e8ff;
+}
+.errormessage
+{
+    background-color: #ffe8e8;
+}
+
+td.label, td.labelwrap
+{
+    width: 60px;
+    text-align: left;
+    vertical-align: middle;
+    padding: 5px 5px 5px 0px;
+}
+td.label
+{
+    white-space: nowrap;
+}
+td.information
+{
+    width: 100%;
+    text-align: left;
+    vertical-align: middle;
+    padding: 5px 0px 5px 0px;
+}
+td.data, td.dataright
+{
+    text-align: left;
+    vertical-align: middle;
+    padding: 5px 0px 5px 0px;
+}
+td.dataright
+{
+    width: 100%;
+}
+td.buttons
+{
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.hcommandButton
+{
+    font-size: 100%;
+    width: 72px;
+    height: 24px;
+    margin-left: 3px;
+}
+.hinputText, .hinputTextReadOnly
+{
+    font-size: 100%;
+    height: 16px;
+}
+.hselectOneMenu
+{
+    font-size: 100%;
+}
