@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<equipmentConfig title="ACMachine" version="4.0">
+  <powerupDelay>3</powerupDelay>
+  <!--<powerdownTimeout>15</powerdownTimeout>-->
+  
+  <devices>
+    <device name="DeviceRedLion">
+      <network>
+        <ipaddr>10.0.3.214</ipaddr>
+        <port>502</port>
+        <timeouts>
+          <receive>3000</receive>
+        </timeouts>
+      </network>
+      <modbus>
+        <slaveId>1</slaveId>
+      </modbus>
+      <initialise>
+        <enabled>true</enabled>
+        <delay>14</delay>
+      </initialise>
+      <statusCheck>
+        <speed>true</speed>
+      </statusCheck>
+    </device>
+  </devices>
+  
+  <drivers>
+    <driver name="DriverNoLoad">
+      <measurements>5</measurements>
+      <measurementDelay>3</measurementDelay>
+      <executionTimes>
+        <initialise>14</initialise>
+        <start>10</start>
+        <run>0</run>
+        <stop>15</stop>
+        <finalise>1</finalise>
+      </executionTimes>
+      <experimentResults>
+        <voltage name="Ph-Ph Voltage" units="" format="f01"/>
+        <current name="Phase Current" units="" format="f02"/>
+        <powerFactor name="Power Factor" units="" format="f03"/>
+        <speed name="Motor Speed" units=""/>
+      </experimentResults>
+    </driver>
+    
+    <driver name="DriverFullLoad">
+      <measurements>5</measurements>
+      <measurementDelay>3</measurementDelay>
+      <executionTimes>
+        <initialise>14</initialise>
+        <start>15</start>
+        <run>0</run>
+        <stop>25</stop>
+        <finalise>1</finalise>
+      </executionTimes>
+      <experimentResults>
+        <voltage name="Ph-Ph Voltage" units="" format="f01"/>
+        <current name="Phase Current" units="" format="f02"/>
+        <powerFactor name="Power Factor" units="" format="f03"/>
+        <speed name="Motor Speed" units=""/>
+      </experimentResults>
+    </driver>
+    
+    <driver name="DriverLockedRotor">
+      <measurements>5</measurements>
+      <measurementDelay>3</measurementDelay>
+      <executionTimes>
+        <initialise>14</initialise>
+        <start>10</start>
+        <run>0</run>
+        <stop>15</stop>
+        <finalise>1</finalise>
+      </executionTimes>
+      <experimentResults>
+        <voltage name="Ph-Ph Voltage" units="" format="f01"/>
+        <current name="Phase Current" units="" format="f02"/>
+        <powerFactor name="Power Factor" units="" format="f03"/>
+        <speed name="Motor Speed" units=""/>
+      </experimentResults>
+    </driver>
+    
+    <driver name="DriverSynchronousSpeed">
+      <measurements>5</measurements>
+      <measurementDelay>3</measurementDelay>
+      <executionTimes>
+        <initialise>14</initialise>
+        <start>15</start>
+        <run>0</run>
+        <stop>15</stop>
+        <finalise>1</finalise>
+      </executionTimes>
+      <experimentResults>
+        <voltage name="Ph-Ph Voltage" units="" format="f01"/>
+        <current name="Phase Current" units="" format="f02"/>
+        <powerFactor name="Power Factor" units="" format="f03"/>
+        <speed name="Motor Speed" units=""/>
+      </experimentResults>
+    </driver>
+  </drivers>
+
+  <validation />
+
+  <setups>
+    <setup id="NoLoad">
+      <driver>DriverNoLoad</driver>
+    </setup>
+    <setup id="FullLoad">
+      <driver>DriverFullLoad</driver>
+    </setup>
+    <setup id="LockedRotor">
+      <driver>DriverLockedRotor</driver>
+    </setup>
+    <setup id="SynchronousSpeed">
+      <driver>DriverSynchronousSpeed</driver>
+    </setup>
+  </setups>
+</equipmentConfig>
